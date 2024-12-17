@@ -1,0 +1,29 @@
+<h1>Selamat Datang, {{ myname }}!</h1>
+<h4>Umur Bro : {{ myage }} Tahun</h4>
+
+<ul>
+    {% if buah %}
+        {% for name in buah %}
+            <li>{{ name }}</li>
+        {% endfor%}
+    {% else %}
+        <p>Tidak ada data buah</p>
+    {% endif %}
+</ul>
+
+{% if myage >= 17 %}
+<p>Dia Dewasa</p>
+{% else %}
+<p>Dia Anak-anak</p>
+{% endif %}
+
+{% for data in product %}
+<p>{{ data.name }}, {{ data.price }},
+
+    {% if data.stok == True %}
+    Tersedia
+    {% else %}
+    Tidak Tersedia
+    {% endif %}
+</p>
+{% endfor %}
